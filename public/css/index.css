@@ -1,0 +1,168 @@
+:root{
+    --main-color:#222;
+    --second-color: rgb(0, 91, 196);
+    --third-color: rgb(65,6,161);
+    --modal-main-color: rgba(22, 22, 22, 0.75);
+    --modal-second-color: rgba(0,91,196,0.75);
+    --modal-third-color: rgba(65,6,161,0.75);
+
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'JetBrains Mono', monospace;
+    display: flex;
+    flex-wrap: wrap;
+    overflow-x: hidden;
+}
+
+.body-child{
+    width: 100vw;
+}
+
+header{
+    background-image: linear-gradient(var(--main-color), var(--third-color));
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    z-index: 98;
+}
+
+aside{
+    position: fixed;
+    width: 100vw;
+    height: 4rem;
+    z-index: 110;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+}
+
+aside *{
+    height: 3rem;
+    margin: auto;
+}
+
+
+.btn{
+    background-color: var(--third-color);
+    color: white;
+    font-weight: bold;
+    border-radius: 50%;
+    cursor: pointer;
+    bottom: 1rem;
+    font-size: 1rem;
+}
+
+.btn-menu{
+    font-size: 1.5rem;
+    padding: 0.8rem;
+    right: 2rem;
+    z-index: 110;
+}
+
+.back, .next{
+    background-color: white;
+    color: black;
+    padding: 1rem;
+}
+audio{
+    height: 3rem;
+    z-index: 100;
+    bottom: 1rem;
+}
+
+nav{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    position: fixed;
+    height: 100vh;
+    text-align: center;
+    background-color: var(--modal-second-color);
+    z-index: 105;
+    font-size: 2rem;
+    font-weight: bold;
+    transform: translateX(100%);
+    transition: all 0.3s ease-in-out;
+}
+
+nav.active{
+    transform: translateX(0);
+}
+
+.link{
+    width: 100vw;
+    background-color: var(--modal-main-color);
+    color: var(--second-color);
+    padding: 1rem;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.link:hover {
+    background-color: var(--main-color);
+    color: white;
+}
+
+footer{
+    background-image: linear-gradient(var(--third-color),var(--main-color));
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    z-index: 98;
+    padding-bottom: 4rem;
+}
+
+main{
+    background-color: var(--main-color);
+    color: white;
+}
+
+.gallery{
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    min-height: 50vh;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.imgs{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100vw;
+}
+
+.imgs figure{
+    margin: 1rem auto;
+    padding: 0.3rem;
+    background-color: var(--third-color);
+    cursor: pointer;
+    width: 220px;
+    transition: all 0.3s ease;
+}
+
+.imgs figure figcaption{
+    color:white;
+    font-weight: bold;
+}
+
+.imgs figure img{
+    width: 200px;
+    height: auto;
+}
+
+.imgs figure:hover{
+    background-color: var(--second-color);
+}
+
+
+
+
