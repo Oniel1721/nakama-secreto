@@ -1,10 +1,10 @@
 :root{
-    --main-color:#222;
-    --second-color: rgb(0, 91, 196);
-    --third-color: rgb(65,6,161);
+    --main-color:rgb(22, 22, 22);
+    --second-color: rgb(255, 187, 0);
+    --third-color: rgb(156, 0, 0);
     --modal-main-color: rgba(22, 22, 22, 0.75);
-    --modal-second-color: rgba(0,91,196,0.75);
-    --modal-third-color: rgba(65,6,161,0.75);
+    --modal-second-color: rgb(255, 187, 0, 0.75);
+    --modal-third-color: rgba(156,0,0,0.75);
 
 }
 
@@ -41,6 +41,8 @@ aside{
     bottom: 0;
     display: flex;
     align-items: center;
+    background-image: linear-gradient(transparent 10%, var(--modal-main-color) 20%, var(--main-color) 70%);
+    /* background-color: var(--modal-main-color); */
 }
 
 aside *{
@@ -50,8 +52,8 @@ aside *{
 
 
 .btn{
-    background-color: var(--third-color);
-    color: white;
+    background-color: white;
+    color: var(--main-color);
     font-weight: bold;
     border-radius: 50%;
     cursor: pointer;
@@ -67,11 +69,9 @@ aside *{
 }
 
 .back, .next{
-    background-color: white;
-    color: black;
     padding: 1rem;
 }
-audio{
+#music{
     height: 3rem;
     z-index: 100;
     bottom: 1rem;
@@ -82,13 +82,14 @@ nav{
     flex-wrap: wrap;
     align-items: center;
     position: fixed;
+    width: 100vw;
     height: 100vh;
     text-align: center;
-    background-color: var(--modal-second-color);
+    background-color: var(--modal-main-color);
     z-index: 105;
     font-size: 2rem;
     font-weight: bold;
-    transform: translateX(100%);
+    transform: translateX(200%);
     transition: all 0.3s ease-in-out;
 }
 
@@ -107,8 +108,8 @@ nav.active{
 }
 
 .link:hover {
-    background-color: var(--main-color);
-    color: white;
+    background-color: var(--second-color);
+    color: var(--main-color);
 }
 
 footer{
@@ -117,52 +118,73 @@ footer{
     text-align: center;
     font-weight: bold;
     z-index: 98;
+    padding-left: 1rem;
+    padding-right: 1rem;
     padding-bottom: 4rem;
 }
 
 main{
+    display: flex;
+    flex-wrap: wrap;
     background-color: var(--main-color);
     color: white;
+    width: 100vw;
 }
 
 .gallery{
+    display: flex;
+    flex-direction: column;
     padding: 0;
     margin: 0;
     width: 100vw;
-    min-height: 50vh;
+    min-height: 100vh;
     margin: 0 auto;
     text-align: center;
+    flex-grow: 1;
 }
 
 .imgs{
     display: flex;
     flex-wrap: wrap;
     width: 100vw;
+    margin: auto;
 }
 
 .imgs figure{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: min-content;
     margin: 1rem auto;
     padding: 0.3rem;
     background-color: var(--third-color);
     cursor: pointer;
-    width: 220px;
+    color: white;
     transition: all 0.3s ease;
 }
 
 .imgs figure figcaption{
-    color:white;
+    color: inherit;
     font-weight: bold;
+    font-size: 1.1rem;
+    margin: 0 auto;
+    align-self: flex-end;
 }
 
 .imgs figure img{
-    width: 200px;
-    height: auto;
+    height: 300px;
+    width: auto;
 }
 
 .imgs figure:hover{
     background-color: var(--second-color);
+    color: var(--main-color);
 }
 
-
-
-
+@media only screen and (max-width: 580px) {
+    .imgs figure img{
+        height: 150px;
+        width: auto;
+    }
+}
